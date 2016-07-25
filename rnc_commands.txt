@@ -1,0 +1,71 @@
+
+Disable:
+########
+
+xdslctl0 configure1 --phycfg  0 0 0 0 0 0 0 0 0 0 0 0x40 0x00
+        
+xdslctl1 configure1 --phycfg  0 0 0 0 0 0 0 0 0 0 0 0x40 0x00
+                
+xdslctl0 profile --save
+        
+xdslctl1 profile --save
+                
+adsl profile --save
+                
+xdslctl0 info --cfg
+
+xdslctl1 info --cfg
+
+reboot
+
+
+enable:
+######
+xdslctl0 configure1 --phycfg  0 0 0 0 0 0 0 0 0 0 0 0x40 0x40        
+
+xdslctl1 configure1 --phycfg  0 0 0 0 0 0 0 0 0 0 0 0x40 0x40
+
+xdslctl0 profile --save
+        
+xdslctl1 profile --save
+                
+adsl profile --save
+                
+xdslctl0 info --cfg
+
+xdslctl0 info --cfg
+
+reboot
+
+
+
+
+
+
+
+
+
+mdm setpv InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.X_BROADCOM_COM_DslPhyCfg6Mask 0
+mdm setpv InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.X_BROADCOM_COM_DslPhyCfg6Value 0
+mdm setpv InternetGatewayDevice.WANDevice.2.WANDSLInterfaceConfig.X_BROADCOM_COM_DslPhyCfg6Mask 0
+mdm setpv InternetGatewayDevice.WANDevice.2.WANDSLInterfaceConfig.X_BROADCOM_COM_DslPhyCfg6Value 0
+mdm setpv InternetGatewayDevice.WANDevice.3.WANDSLInterfaceConfig.X_BROADCOM_COM_DslPhyCfg6Mask 0
+mdm setpv InternetGatewayDevice.WANDevice.3.WANDSLInterfaceConfig.X_BROADCOM_COM_DslPhyCfg6Value 0
+mdm setpv InternetGatewayDevice.WANDevice.4.WANDSLInterfaceConfig.X_BROADCOM_COM_DslPhyCfg6Mask 0
+mdm setpv InternetGatewayDevice.WANDevice.4.WANDSLInterfaceConfig.X_BROADCOM_COM_DslPhyCfg6Value 0
+save
+reboot
+
+
+
+To turn RNC on, replace the 0 value with 64.
+
+
+
+
+
+mdm getpv InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.X_BROADCOM_COM_DslPhyCfg6Mask
+mdm getpv InternetGatewayDevice.WANDevice.2.WANDSLInterfaceConfig.X_BROADCOM_COM_DslPhyCfg6Mask
+
+
+Param value=64
