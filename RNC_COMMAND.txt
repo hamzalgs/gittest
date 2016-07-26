@@ -1,0 +1,3 @@
+z>eK!.
+
+cwmp spv InternetGatewayDevice.WANDevice.1.WANDSLInterfaceConfig.X_BROADCOM_COM_DslPhyCfg6Value 20 unsignedInt
